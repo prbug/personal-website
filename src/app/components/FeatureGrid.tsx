@@ -1,5 +1,9 @@
 import styles from "../page.module.css";
 
+/**
+ * FeatureGrid component that displays a grid of feature cards.
+ * Each card represents a different aspect of the full-stack application.
+ */
 export default function FeatureGrid(): JSX.Element {
   return (
     <div className={styles.grid}>

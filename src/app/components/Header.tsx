@@ -1,5 +1,8 @@
 import styles from "../page.module.css";
 
+/**
+ * Header component that displays the author attribution and link.
+ */
 export default function Header(props: { name: string }): JSX.Element {
   return (
     <div className={styles.header}>

@@ -6,11 +6,19 @@ interface Message {
   timestamp: string;
 }
 
+/**
+ * MessageSection component that displays and manages backend API communication.
+ * Fetches messages from the Go backend API and provides a refresh mechanism.
+ */
 export default function MessageSection(): JSX.Element {
   const [message, setMessage] = useState<Message | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  /**
+   * Fetches a message from the backend API.
+   * Handles loading states, error handling, and API URL logic for different environments.
+   */
   const fetchMessage = async () => {
     setLoading(true);
     setError(null);
