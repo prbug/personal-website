@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "src/api/main.go",
+      "use": "@vercel/go"
+    }
+  ],
+  "functions": {
+    "src/api/main.go": {
+      "runtime": "go1.x"
+    }
+  }
+} 
