@@ -33,9 +33,9 @@ function ScrollMessage({ text }: { text: string }): JSX.Element {
   return (
     <div
       ref={elementRef}
-      className="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center animate-fade-in-up scroll-fade-out"
+      className="absolute bottom-8 sm:bottom-16 left-1/2 transform -translate-x-1/2 text-center animate-fade-in-up scroll-fade-out"
     >
-      <div className="text-sm font-fira-code text-[#e0af68]/80 leading-tight">
+      <div className="text-xs sm:text-sm font-fira-code text-[#e0af68]/80 leading-tight">
         <pre className="whitespace-pre">{text}</pre>
       </div>
     </div>
@@ -47,8 +47,8 @@ function ScrollMessage({ text }: { text: string }): JSX.Element {
  */
 function FileName({ fileName }: { fileName: string }): JSX.Element {
   return (
-    <div className="fixed top-8 left-8 text-sm font-fira-code text-[#a9b1d6]/80 bg-[#1a1b26]/30 backdrop-blur-xl px-3 py-1 rounded border border-[#7aa2f7]/20 flex items-center gap-2 z-10">
-      <span>{fileName}</span>
+    <div className="fixed top-4 sm:top-8 left-4 sm:left-8 text-xs sm:text-sm font-fira-code text-[#a9b1d6]/80 bg-[#1a1b26]/30 backdrop-blur-xl px-2 sm:px-3 py-1 rounded border border-[#7aa2f7]/20 flex items-center gap-1 sm:gap-2 z-10 max-w-[calc(100vw-2rem)]">
+      <span className="truncate">{fileName}</span>
       <FileIcon />
     </div>
   );
@@ -62,12 +62,12 @@ function SocialIcons(props: {
   gitHubUrl: string;
 }): JSX.Element {
   return (
-    <div className="fixed top-8 right-8 flex items-center gap-2 z-10">
+    <div className="fixed top-4 sm:top-8 right-4 sm:right-8 flex items-center gap-1 sm:gap-2 z-10">
       <a
         href={props.linkedInUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-sm font-fira-code text-[#a9b1d6]/80 bg-[#1a1b26]/30 backdrop-blur-xl rounded border border-[#7aa2f7]/20 hover:text-[#7aa2f7] transition-colors flex items-center justify-center w-8 h-8"
+        className="text-sm font-fira-code text-[#a9b1d6]/80 bg-[#1a1b26]/30 backdrop-blur-xl rounded border border-[#7aa2f7]/20 hover:text-[#7aa2f7] transition-colors flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8"
       >
         <LinkedInIcon />
       </a>
@@ -75,7 +75,7 @@ function SocialIcons(props: {
         href={props.gitHubUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-sm font-fira-code text-[#a9b1d6]/80 bg-[#1a1b26]/30 backdrop-blur-xl rounded border border-[#7aa2f7]/20 hover:text-[#7aa2f7] transition-colors flex items-center justify-center w-8 h-8"
+        className="text-sm font-fira-code text-[#a9b1d6]/80 bg-[#1a1b26]/30 backdrop-blur-xl rounded border border-[#7aa2f7]/20 hover:text-[#7aa2f7] transition-colors flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8"
       >
         <GitHubIcon />
       </a>
@@ -87,22 +87,48 @@ function SocialIcons(props: {
  * Typed text component with cursor animation
  */
 function TypedText({ text }: { text: string }): JSX.Element {
+  // Create a shorter version for mobile
+  const mobileText = "# Chandler King";
+  const fullText = text;
+  
   return (
-    <div className="text-4xl font-fira-code font-semibold text-[#7dcfff]/95">
-      <div className="flex items-center">
+    <div className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-fira-code font-semibold text-[#7dcfff]/95 px-6 sm:px-8 md:px-12 text-center w-full">
+      {/* Mobile version */}
+      <div className="flex items-center justify-center sm:hidden">
         <div
           className="inline-block overflow-hidden whitespace-nowrap"
           style={
             {
-              "--text-length": `${text.length}ch`,
-              animation: `typing 1s steps(${text.length}, end) forwards`,
+              "--text-length": `${mobileText.length}ch`,
+              animation: `typing 1s steps(${mobileText.length}, end) forwards`,
             } as React.CSSProperties
           }
         >
-          {text}
+          {mobileText}
         </div>
         <div
-          className="w-4 h-10 bg-current ml-2 rounded-sm"
+          className="w-2 h-6 bg-current ml-1 rounded-sm flex-shrink-0"
+          style={{
+            animation: `blink-caret .75s step-end infinite`,
+          }}
+        />
+      </div>
+      
+      {/* Desktop version */}
+      <div className="hidden sm:flex items-center justify-center">
+        <div
+          className="inline-block overflow-hidden whitespace-nowrap"
+          style={
+            {
+              "--text-length": `${fullText.length}ch`,
+              animation: `typing 1s steps(${fullText.length}, end) forwards`,
+            } as React.CSSProperties
+          }
+        >
+          {fullText}
+        </div>
+        <div
+          className="w-3 h-8 md:w-4 md:h-10 bg-current ml-2 rounded-sm flex-shrink-0"
           style={{
             animation: `blink-caret .75s step-end infinite`,
           }}

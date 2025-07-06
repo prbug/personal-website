@@ -20,18 +20,18 @@ export default function WorkExperience({
   experiences,
 }: WorkExperienceProps): JSX.Element {
   return (
-    <section className="mb-12">
-      <h2 className="text-2xl font-fira-code font-bold mb-6 text-[#7dcfff] tracking-tight border-b border-[#7dcfff]/30 pb-2">
+    <section className="mb-8 sm:mb-12">
+      <h2 className="text-xl sm:text-2xl font-fira-code font-bold mb-4 sm:mb-6 text-[#7dcfff] tracking-tight border-b border-[#7dcfff]/30 pb-2">
         ## Work Experience
       </h2>
-      <div className="space-y-8">
+      <div className="space-y-6 sm:space-y-8">
         {experiences.map((experience, index) => (
-          <div key={index} className="border-l-4 border-[#7aa2f7]/60 pl-6 py-2">
-            <div className="flex justify-between items-start mb-2">
-              <h3 className="text-xl font-fira-code font-bold text-[#7aa2f7]">
+          <div key={index} className="border-l-4 border-[#7aa2f7]/60 pl-4 sm:pl-6 py-2">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-1 sm:gap-0">
+              <h3 className="text-lg sm:text-xl font-fira-code font-bold text-[#7aa2f7]">
                 **{experience.company}**
               </h3>
-              <span className="text-sm font-fira-code text-[#e0af68]/80 font-medium">
+              <span className="text-xs sm:text-sm font-fira-code text-[#e0af68]/80 font-medium">
                 {experience.period}
               </span>
             </div>
@@ -40,7 +40,7 @@ export default function WorkExperience({
             </div>
 
             {experience.roles ? (
-              <ul className="list-none space-y-4 text-[#a9b1d6] font-fira-code">
+              <ul className="list-none space-y-3 sm:space-y-4 text-[#a9b1d6] font-fira-code">
                 {experience.roles.map((role, roleIndex) => (
                   <li key={roleIndex}>
                     <div className="text-sm font-fira-code font-semibold text-[#7aa2f7] mb-1">
@@ -48,7 +48,7 @@ export default function WorkExperience({
                     </div>
                     <div className="flex items-start">
                       <span className="text-[#7aa2f7] mr-2">•</span>
-                      {role.description}
+                      <span className="text-sm sm:text-base">{role.description}</span>
                     </div>
                   </li>
                 ))}
@@ -59,7 +59,7 @@ export default function WorkExperience({
                   (responsibility, respIndex) => (
                     <li key={respIndex} className="flex items-start">
                       <span className="text-[#7aa2f7] mr-2">•</span>
-                      {responsibility}
+                      <span className="text-sm sm:text-base">{responsibility}</span>
                     </li>
                   ),
                 )}
