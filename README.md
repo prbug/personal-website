@@ -17,14 +17,33 @@ A modern personal website built with Next.js (TypeScript/React), designed for de
 personal-website/
 ├── src/
 │   └── app/
-│       ├── layout.tsx      # Root layout component
-│       ├── page.tsx        # Main page component
-│       ├── globals.css     # Global styles
-│       └── components/     # React components
-├── package.json           # Node.js dependencies
-├── vercel.json           # Vercel configuration
-├── tailwind.config.js    # Tailwind CSS config
-└── tsconfig.json         # TypeScript config
+│       ├── layout.tsx          # Root layout component
+│       ├── page.tsx            # Main page component
+│       ├── globals.css         # Global styles
+│       ├── components/         # React components
+│       │   ├── Background.tsx      # Background animation component
+│       │   ├── Education.tsx       # Education section component
+│       │   ├── Intro.tsx           # Introduction section component
+│       │   ├── MessageSection.tsx  # Welcome message component
+│       │   ├── Skills.tsx          # Skills section component
+│       │   ├── Summary.tsx         # Summary section component
+│       │   ├── Title.tsx           # Title component
+│       │   ├── WorkExperience.tsx  # Work experience component
+│       │   └── icons.tsx           # Icon components
+│       └── data/
+│           └── resumeData.ts       # Resume data and content
+├── package.json               # Node.js dependencies and scripts
+├── vercel.json               # Vercel deployment configuration
+├── tailwind.config.js        # Tailwind CSS configuration
+├── tsconfig.json             # TypeScript configuration
+├── next.config.js            # Next.js configuration
+├── postcss.config.cjs        # PostCSS configuration
+├── .eslintrc.json            # ESLint configuration
+├── .gitignore                # Git ignore rules
+├── .npmrc                    # npm configuration
+├── next-env.d.ts             # Next.js TypeScript definitions
+├── pnpm-workspace.yaml       # pnpm workspace configuration
+└── pnpm-lock.yaml            # pnpm lock file
 ```
 
 ## 🛠️ Local Development
