@@ -3,31 +3,143 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --foreground: 0 0% 100%;
+  --background: 0 0% 0%;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/* Typing animation for intro text */
+@keyframes typing {
+  from { width: 0; }
+  to { width: var(--text-length); }
+}
+
+/* Blinking cursor animation like Neovim */
+@keyframes blink-caret {
+  from, to { background-color: transparent; }
+  50% { background-color: currentColor; }
+}
+
+/* Fade in from bottom animation */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Floating animations for background blobs */
+@keyframes float-slow {
+  0% { 
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.25;
+  }
+  25% { 
+    transform: translate(15vw, -20vh) rotate(5deg);
+    opacity: 0.35;
+  }
+  50% { 
+    transform: translate(25vw, -10vh) rotate(-3deg);
+    opacity: 0.15;
+  }
+  75% { 
+    transform: translate(10vw, -30vh) rotate(8deg);
+    opacity: 0.3;
+  }
+  100% { 
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.25;
+  }
+}
+
+@keyframes float-medium {
+  0% { 
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.25;
+  }
+  25% { 
+    transform: translate(-20vw, 15vh) rotate(-5deg);
+    opacity: 0.1;
+  }
+  50% { 
+    transform: translate(-30vw, 25vh) rotate(3deg);
+    opacity: 0.35;
+  }
+  75% { 
+    transform: translate(-15vw, 35vh) rotate(-8deg);
+    opacity: 0.2;
+  }
+  100% { 
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.25;
+  }
+}
+
+@keyframes float-fast {
+  0% { 
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.15;
+  }
+  25% { 
+    transform: translate(25vw, -15vh) rotate(10deg);
+    opacity: 0.25;
+  }
+  50% { 
+    transform: translate(40vw, -25vh) rotate(-5deg);
+    opacity: 0.05;
+  }
+  75% { 
+    transform: translate(20vw, -35vh) rotate(12deg);
+    opacity: 0.2;
+  }
+  100% { 
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.15;
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 30s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 25s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 20s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fade-in-up 1s ease-out 1s forwards;
+}
+
+/* Scroll-based fade out for scroll message */
+.scroll-fade-out {
+  --scroll-opacity: 1;
+  animation: fade-in-up 1s ease-out 1s forwards, scroll-fade 0.1s ease-out 2s forwards;
+}
+
+@keyframes scroll-fade {
+  to {
+    opacity: var(--scroll-opacity);
   }
 }
