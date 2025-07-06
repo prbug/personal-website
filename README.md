@@ -1,6 +1,6 @@
-# Personal Website - Full Stack App
+# Personal Website - Next.js App
 
-A modern full-stack application built with Next.js (TypeScript/React) frontend and Go/Gin backend, designed for deployment on Vercel.
+A modern personal website built with Next.js (TypeScript/React), designed for deployment on Vercel.
 
 ## 🚀 Tech Stack
 
@@ -11,25 +11,17 @@ A modern full-stack application built with Next.js (TypeScript/React) frontend a
 - **React 18** - UI library
 - **Tailwind CSS** - Utility-first CSS framework
 
-### Backend
-
-- **Go 1.24** - Programming language
-- **Gin** - HTTP web framework
-- **Vercel Functions** - Serverless deployment
-
 ## 📁 Project Structure
 
 ```
 personal-website/
 ├── src/
-│   ├── app/
-│   │   ├── layout.tsx      # Root layout component
-│   │   ├── page.tsx        # Main page component
-│   │   └── globals.css     # Global styles
-│   └── api/
-│       └── main.go         # Go backend API
+│   └── app/
+│       ├── layout.tsx      # Root layout component
+│       ├── page.tsx        # Main page component
+│       ├── globals.css     # Global styles
+│       └── components/     # React components
 ├── package.json           # Node.js dependencies
-├── go.mod                 # Go dependencies
 ├── vercel.json           # Vercel configuration
 ├── tailwind.config.js    # Tailwind CSS config
 └── tsconfig.json         # TypeScript config
@@ -40,10 +32,9 @@ personal-website/
 ### Prerequisites
 
 - Node.js 18+
-- Go 1.24+
 - pnpm (recommended) or npm
 
-### Frontend Setup
+### Setup
 
 ```bash
 # Install dependencies
@@ -66,35 +57,7 @@ brew install pnpm
 curl -fsSL https://get.pnpm.io/install.sh | sh -
 ```
 
-The frontend will be available at `http://localhost:3000`
-
-### Backend Setup
-
-```bash
-# Install Go dependencies
-go mod tidy
-
-# Run Go server
-go run src/api/main.go
-```
-
-The backend will be available at `http://localhost:8080`
-
-### Using Go Backend Locally
-
-```bash
-# Terminal 1: Start Go backend
-go run src/api/main.go
-
-# Terminal 2: Start Next.js frontend
-pnpm dev
-```
-
-## 🌐 API Endpoints
-
-- `GET /api/hello` - Returns a hello message with timestamp
-- `GET /api/health` - Health check endpoint
-- `GET /` - API information
+The application will be available at `http://localhost:3000`
 
 ## 🚀 Deployment
 
@@ -130,15 +93,14 @@ pnpm dev
 2. **Connect to Vercel**
    - Go to [vercel.com](https://vercel.com)
    - Import your GitHub repository
-   - Vercel will automatically detect Next.js and Go configurations
+   - Vercel will automatically detect Next.js configuration
 
 ## 🔧 Configuration
 
 ### Vercel Configuration (`vercel.json`)
 
-- Configures builds for both Next.js and Go
-- Routes API requests to Go functions
-- Sets up serverless function runtime
+- Configures builds for Next.js
+- Optimized for serverless deployment
 
 ### Environment Variables
 
@@ -149,11 +111,7 @@ No environment variables are required for basic functionality.
 - ✅ Modern React with TypeScript
 - ✅ Server-side rendering with Next.js
 - ✅ Beautiful UI with Tailwind CSS
-- ✅ Go backend with Gin framework
-- ✅ RESTful API endpoints
-- ✅ CORS enabled for cross-origin requests
 - ✅ Serverless deployment ready
-- ✅ Health check endpoints
 - ✅ Responsive design
 - ✅ Dark mode support
 
@@ -164,7 +122,6 @@ No environment variables are required for basic functionality.
 - Dark/light mode support
 - Loading states
 - Error handling
-- Real-time API communication
 
 ## 🔍 Development Tips
 
@@ -174,13 +131,7 @@ No environment variables are required for basic functionality.
    - Check browser console for errors
    - Use React DevTools for debugging
 
-2. **Backend Development**
-
-   - Use `go run src/api/main.go` for local testing
-   - Check terminal for server logs
-   - Test API endpoints with curl or Postman
-
-3. **Styling**
+2. **Styling**
    - Tailwind CSS classes for rapid styling
    - Custom CSS in `globals.css` for global styles
    - Responsive design with mobile-first approach
@@ -191,30 +142,13 @@ No environment variables are required for basic functionality.
 
 1. **Port conflicts**
 
-   - Frontend: Change port in `package.json` scripts
-   - Backend: Change port in `src/api/main.go`
+   - Change port in `package.json` scripts if needed
 
-2. **CORS errors**
+2. **Build errors**
 
-   - Backend includes CORS headers
-   - Check browser console for errors
-
-3. **Build errors**
-   - Run `pnpm install` to ensure dependencies
-   - Run `go mod tidy` for Go dependencies
+   - Check TypeScript errors with `pnpm type-check`
+   - Ensure all dependencies are installed with `pnpm install`
 
 ## 📄 License
 
-MIT License - feel free to use this template for your projects!
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
----
-
-Built with ❤️ using Next.js, Go, and Vercel
+This project is open source and available under the [MIT License](LICENSE).

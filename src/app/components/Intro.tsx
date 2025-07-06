@@ -35,7 +35,7 @@ function ScrollMessage({ text }: { text: string }): JSX.Element {
       ref={elementRef}
       className="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center animate-fade-in-up scroll-fade-out"
     >
-      <div className="text-sm font-fira-code text-white/60 leading-tight">
+      <div className="text-sm font-fira-code text-[#e0af68]/80 leading-tight">
         <pre className="whitespace-pre">{text}</pre>
       </div>
     </div>
@@ -47,7 +47,7 @@ function ScrollMessage({ text }: { text: string }): JSX.Element {
  */
 function FileName({ fileName }: { fileName: string }): JSX.Element {
   return (
-    <div className="fixed top-8 left-8 text-sm font-fira-code text-white/60 bg-black/20 backdrop-blur-sm px-3 py-1 rounded border border-white/10 flex items-center gap-2 z-10">
+    <div className="fixed top-8 left-8 text-sm font-fira-code text-[#a9b1d6]/80 bg-[#1a1b26]/30 backdrop-blur-xl px-3 py-1 rounded border border-[#7aa2f7]/20 flex items-center gap-2 z-10">
       <span>{fileName}</span>
       <FileIcon />
     </div>
@@ -67,7 +67,7 @@ function SocialIcons(props: {
         href={props.linkedInUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-sm font-fira-code text-white/60 bg-black/20 backdrop-blur-sm rounded border border-white/10 hover:text-white/80 transition-colors flex items-center justify-center w-8 h-8"
+        className="text-sm font-fira-code text-[#a9b1d6]/80 bg-[#1a1b26]/30 backdrop-blur-xl rounded border border-[#7aa2f7]/20 hover:text-[#7aa2f7] transition-colors flex items-center justify-center w-8 h-8"
       >
         <LinkedInIcon />
       </a>
@@ -75,7 +75,7 @@ function SocialIcons(props: {
         href={props.gitHubUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-sm font-fira-code text-white/60 bg-black/20 backdrop-blur-sm rounded border border-white/10 hover:text-white/80 transition-colors flex items-center justify-center w-8 h-8"
+        className="text-sm font-fira-code text-[#a9b1d6]/80 bg-[#1a1b26]/30 backdrop-blur-xl rounded border border-[#7aa2f7]/20 hover:text-[#7aa2f7] transition-colors flex items-center justify-center w-8 h-8"
       >
         <GitHubIcon />
       </a>
@@ -88,7 +88,7 @@ function SocialIcons(props: {
  */
 function TypedText({ text }: { text: string }): JSX.Element {
   return (
-    <div className="text-4xl font-fira-code text-white/85">
+    <div className="text-4xl font-fira-code font-semibold text-[#7dcfff]/95">
       <div className="flex items-center">
         <div
           className="inline-block overflow-hidden whitespace-nowrap"
