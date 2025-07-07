@@ -5,15 +5,15 @@ import React from "react";
  */
 export default function Background() {
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden">
+    <div className="fixed inset-0 -z-10">
       {/* Pink gradient blob */}
-      <div className="absolute top-[-10%] left-[-10%] w-[70vw] h-[70vw] bg-pink-400 opacity-25 blur-[100px] rounded-full animate-float-slow" />
+      <div className="absolute top-8 left-8 w-[40vh] h-[40vh] md:top-[-10%] md:left-[-10%] md:w-[70vw] md:h-[70vw] bg-pink-400 opacity-25 blur-[120px] md:blur-[100px] rounded-full animate-float-slow" />
       {/* Purple gradient blob */}
-      <div className="absolute bottom-[-10%] right-[-10%] w-[70vw] h-[70vw] bg-purple-400 opacity-25 blur-[100px] rounded-full animate-float-medium" />
+      <div className="absolute bottom-8 right-8 w-[40vh] h-[40vh] md:bottom-[-10%] md:right-[-10%] md:w-[70vw] md:h-[70vw] bg-purple-400 opacity-25 blur-[120px] md:blur-[100px] rounded-full animate-float-medium" />
       {/* Yellow gradient blob */}
-      <div className="absolute top-[30%] right-[10%] w-[50vw] h-[50vw] bg-yellow-300 opacity-15 blur-[80px] rounded-full animate-float-fast" />
-      {/* Extra blur overlay for glass effect */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-2xl" />
+      <div className="absolute top-1/2 right-8 w-[35vh] h-[35vh] md:top-[30%] md:right-[10%] md:w-[50vw] md:h-[50vw] bg-yellow-300 opacity-15 blur-[100px] md:blur-[80px] rounded-full animate-float-fast" />
+      {/* Extra blur overlay for glass effect - reduced on mobile */}
+      <div className="absolute inset-0 bg-black/20 md:bg-black/60 backdrop-blur-sm md:backdrop-blur-2xl" />
     </div>
   );
 }
