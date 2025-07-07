@@ -1,6 +1,6 @@
 export const resumeData = {
   summary:
-    "Experienced Machine Learning Engineer with a strong background in full-stack development, MLOps, and scalable system design, proven ability to take projects from 0 to 1, optimize performance and act as a technical lead for engineering teams.",
+    "Experienced Software Engineer with a strong background in full-stack development, MLOps, microservices, and scalable system design. Proven ability to take projects from 0 to 1, optimize performance and act as a technical lead for engineering teams.",
 
   workExperience: [
     {
@@ -8,7 +8,7 @@ export const resumeData = {
       period: "March 2025 → Present",
       title: "Senior Full Stack Engineer • Machine Learning Engineering",
       responsibilities: [
-        "Technical lead, overseeing the optimization and implementation of machine learning model services in production, yielding 10-50x speed improvement on research code as well as improved maintainability and reliability. Leverages asynchronous programming and Rust extension modules for heavily CPU-bound logic.",
+        "Technical lead, overseeing the optimization and implementation of machine learning model services in production, yielding 10-50x speed improvement on research code as well as improved maintainability and reliability. Leverages asynchronous programming, parallelism, and Rust extension modules for heavily CPU-bound logic.",
         "Implemented Dagster for the orchestration of ML training, model storage, and inference. Alleviated reliance on AWS Lambda, and dramatically reduced costs as a result.",
         "Regularly creates technical design documentation for new projects and onboarding materials for new engineers.",
       ],
@@ -48,11 +48,12 @@ export const resumeData = {
   skills: [
     {
       title: "Programming Languages",
-      skills: "Python, Javascript, Go (Golang), Rust, SQL, HTML, CSS",
+      skills:
+        "Python, Javascript, Typescript, Go (Golang), Rust, SQL,  HTML, CSS",
     },
     {
       title: "Frameworks",
-      skills: "React, Flask, FastAPI, Dagster",
+      skills: "React, Flask, FastAPI, Dagster, Next.js",
     },
     {
       title: "Libraries",
@@ -61,7 +62,7 @@ export const resumeData = {
     {
       title: "Tools/Tech",
       skills:
-        "AWS (S3, Aurora, Lambda, SQS, etc.), Google Cloud Storage, BigQuery, Git, Kubernetes, Bazel, Github, Gitlab, Bitbucket, Datadog, Grafana, Terraform, Postgres, Tableau",
+        "AWS (S3, Aurora, Lambda, SQS, etc.), Google Cloud Storage, BigQuery, Vercel, Git, Kubernetes, Bazel, Github, Gitlab, Bitbucket, Datadog, Grafana, Terraform, Postgres, Tableau",
     },
   ],
 
